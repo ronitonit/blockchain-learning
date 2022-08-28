@@ -29,6 +29,8 @@ const config: HardhatUserConfig = {
       url: RINKEBY_ALCHEMY_URL,
       accounts: [RINKEBY_PRIVATE_KEY],
       chainId: 4,
+      // @ts-ignore
+      blockConfirmations: 5,
     },
     localhost: {
       url: "http://127.0.0.1:8545/",
@@ -40,7 +42,7 @@ const config: HardhatUserConfig = {
     apiKey: ETHERSCAN_API_KEY,
   },
   gasReporter: {
-    enabled: true,
+    enabled: false,
     outputFile: "gas-reporter.txt",
     currency: "USD",
     noColors: true,
